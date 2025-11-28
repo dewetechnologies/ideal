@@ -245,7 +245,6 @@
                         <h1 class="display-4 mb-3">AI & ML <span class="text-primary-2">Projects</span></h1>
                         <p class="lead text-muted">A timeline of my artificial intelligence and machine learning
                             journey.</p>
-                        <a href="/ai-create" class="btn btn-primary mt-3">Add New Project</a>
                     </div>
                 </div>
 
@@ -259,6 +258,17 @@
                                         project.title }}</a>
                                 </h3>
                                 <span class="badge bg-secondary mb-2">{{ project.created_at[:10] }}</span>
+
+                                {% if project.technologies %}
+                                <div class="mb-2">
+                                    {% for tech in project.technologies.split(',') %}
+                                    <span
+                                        class="badge bg-primary-subtle text-primary-emphasis border border-primary-subtle rounded-pill">
+                                        {{ tech.strip() }}
+                                    </span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
 
                                 {% if project.image_url %}
                                 {% set images = project.image_url.split(',') %}
@@ -276,28 +286,25 @@
                                 </div>
                                 {% endif %}
 
-                                <p class="text-muted mb-3">{{ project.description }}</p>
+                                <div class="mb-3">
+                                    {{ project.description | striptags | truncate(200) }}
+                                </div>
 
-                                <div class="d-flex gap-3">
+                                <div class="d-flex gap-2">
                                     <a href="/ai-{{ project.id }}" class="btn btn-sm btn-outline-primary">View
                                         Details</a>
                                     {% if project.github_url %}
                                     <a href="{{ project.github_url }}" target="_blank"
-                                        class="btn btn-sm btn-outline-secondary">
+                                        class="btn btn-sm btn-outline-light">
                                         <i class="ri-github-fill"></i> GitHub
                                     </a>
                                     {% endif %}
                                 </div>
                             </div>
-                            {% else %}
-                            <div class="text-center py-5">
-                                <p class="text-muted">No projects found. Start by adding one!</p>
-                            </div>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
 

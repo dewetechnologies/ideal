@@ -211,7 +211,7 @@
                             {% endif %}
                             {% endwith %}
 
-                            <form method="POST" action="/ai-edit/{{ project.id }}">
+                            <form method="POST" action="/ai-edit/{{ project.id }}" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Project Title</label>
                                     <input type="text" class="form-control" id="title" name="title"
@@ -219,9 +219,24 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="description" class="form-label">Description</label>
+                                    <label for="description" class="form-label">Short Description (Timeline
+                                        Preview)</label>
                                     <textarea class="form-control" id="description" name="description"
-                                        rows="4">{{ project.description }}</textarea>
+                                        rows="3">{{ project.description }}</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="detail_description" class="form-label">Detailed Project Content (HTML
+                                        supported)</label>
+                                    <textarea class="form-control" id="detail_description" name="detail_description"
+                                        rows="10">{{ project.detail_description or '' }}</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="technologies" class="form-label">Technologies (comma separated)</label>
+                                    <input type="text" class="form-control" id="technologies" name="technologies"
+                                        value="{{ project.technologies or '' }}"
+                                        placeholder="Python, Pandas, Scikit-learn, etc.">
                                 </div>
 
                                 <div class="mb-3">
@@ -231,7 +246,20 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="image_url" class="form-label">Image URLs (comma separated)</label>
+                                    <label for="image_file" class="form-label">Project Image (Upload New)</label>
+                                    <input type="file" class="form-control" id="image_file" name="image_file"
+                                        accept="image/*">
+                                    {% if project.image_url %}
+                                    <div class="mt-2">
+                                        <small class="text-muted">Current Image:</small>
+                                        <img src="{{ project.image_url.split(',')[0].strip() }}" alt="Current Image"
+                                            style="height: 50px;" class="rounded ms-2">
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="image_url" class="form-label">Or Image URL</label>
                                     <input type="text" class="form-control" id="image_url" name="image_url"
                                         value="{{ project.image_url }}"
                                         placeholder="https://example.com/image1.jpg, https://example.com/image2.jpg">

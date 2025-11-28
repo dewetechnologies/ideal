@@ -211,16 +211,30 @@
                             {% endif %}
                             {% endwith %}
 
-                            <form method="POST" action="/ai-create">
+                            <form method="POST" action="/ai-create" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Project Title</label>
                                     <input type="text" class="form-control" id="title" name="title" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="description" class="form-label">Description</label>
-                                    <textarea class="form-control" id="description" name="description"
-                                        rows="4"></textarea>
+                                    <label for="description" class="form-label">Short Description (Timeline
+                                        Preview)</label>
+                                    <textarea class="form-control" id="description" name="description" rows="3"
+                                        placeholder="A brief summary for the timeline view..."></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="detail_description" class="form-label">Detailed Project Content (HTML
+                                        supported)</label>
+                                    <textarea class="form-control" id="detail_description" name="detail_description"
+                                        rows="10" placeholder="Paste your full HTML content here..."></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="technologies" class="form-label">Technologies (comma separated)</label>
+                                    <input type="text" class="form-control" id="technologies" name="technologies"
+                                        placeholder="Python, Pandas, Scikit-learn, etc.">
                                 </div>
 
                                 <div class="mb-3">
@@ -229,9 +243,15 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="image_url" class="form-label">Image URLs (comma separated)</label>
+                                    <label for="image_file" class="form-label">Project Image (Upload)</label>
+                                    <input type="file" class="form-control" id="image_file" name="image_file"
+                                        accept="image/*">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="image_url" class="form-label">Or Image URL</label>
                                     <input type="text" class="form-control" id="image_url" name="image_url"
-                                        placeholder="https://example.com/image1.jpg, https://example.com/image2.jpg">
+                                        placeholder="https://example.com/image1.jpg">
                                 </div>
 
                                 <div class="mb-3">

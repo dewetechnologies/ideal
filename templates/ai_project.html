@@ -246,6 +246,17 @@
                                     {% endif %}
                                 </div>
 
+                                {% if project.technologies %}
+                                <div class="mb-4">
+                                    {% for tech in project.technologies.split(',') %}
+                                    <span
+                                        class="badge bg-primary-subtle text-primary-emphasis border border-primary-subtle rounded-pill fs-6 me-1">
+                                        {{ tech.strip() }}
+                                    </span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+
                                 {% if project.progress %}
                                 <div class="mb-5">
                                     <div class="d-flex justify-content-between mb-2">
@@ -263,7 +274,13 @@
 
                                 <div class="project-description">
                                     <h3 class="h4 mb-3">About this project</h3>
-                                    <p class="lead">{{ project.description }}</p>
+                                    <div class="lead">
+                                        {% if project.detail_description %}
+                                        {{ project.detail_description | safe }}
+                                        {% else %}
+                                        {{ project.description }}
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                         </div>

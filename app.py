@@ -9,6 +9,8 @@ from datetime import datetime
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key'
 
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
+
 # Gmail configuration
 GMAIL_USER = 'smetchappy@gmail.com'
 GMAIL_PASSWORD = 'ihfoifrlzjvcjea'
@@ -49,11 +51,25 @@ def init_db():
             title TEXT NOT NULL,
             github_url TEXT,
             description TEXT,
+            detail_description TEXT,
+            technologies TEXT,
             image_url TEXT,
             progress INTEGER DEFAULT 0,
             created_at TEXT NOT NULL
         )
     ''')
+    
+    # Migration: Add detail_description if it doesn't exist
+    try:
+        conn.execute('ALTER TABLE ai_projects ADD COLUMN detail_description TEXT')
+    except sqlite3.OperationalError:
+        pass
+
+    # Migration: Add technologies if it doesn't exist
+    try:
+        conn.execute('ALTER TABLE ai_projects ADD COLUMN technologies TEXT')
+    except sqlite3.OperationalError:
+        pass
     
     conn.commit()
     conn.close()
@@ -112,8 +128,6 @@ def send_contact_email():
         msg.attach(MIMEText(body, 'plain'))
         
         # Send email
-        # Note: smtplib was missing from imports in original file, assuming it's imported or will be added if needed.
-        # But for now I'll leave the logic as is, just ensuring indentation is correct.
         import smtplib
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
             server.login(GMAIL_USER, GMAIL_PASSWORD)
@@ -145,7 +159,21 @@ def ai_create():
         title = request.form.get('title')
         github_url = request.form.get('github_url')
         description = request.form.get('description')
+        detail_description = request.form.get('detail_description')
+        technologies = request.form.get('technologies')
+        
+        # Handle Image Upload
         image_url = request.form.get('image_url', '').strip()
+        if 'image_file' in request.files:
+            file = request.files['image_file']
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                # Add timestamp to filename to avoid duplicates/caching
+                timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+                filename = f"{timestamp}_{filename}"
+                file.save(os.path.join(UPLOAD_FOLDER, filename))
+                image_url = url_for('static', filename=f'uploads/{filename}')
+
         try:
             progress = int(request.form.get('progress', 0))
         except ValueError:
@@ -159,8 +187,8 @@ def ai_create():
             return redirect(url_for('ai_create'))
             
         conn = get_db_connection()
-        conn.execute('INSERT INTO ai_projects (title, github_url, description, image_url, progress, created_at) VALUES (?, ?, ?, ?, ?, ?)',
-                     (title, github_url, description, image_url, progress, datetime.utcnow().isoformat()))
+        conn.execute('INSERT INTO ai_projects (title, github_url, description, detail_description, technologies, image_url, progress, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                     (title, github_url, description, detail_description, technologies, image_url, progress, datetime.utcnow().isoformat()))
         conn.commit()
         conn.close()
         
@@ -201,7 +229,24 @@ def ai_edit(project_id):
         title = request.form.get('title')
         github_url = request.form.get('github_url')
         description = request.form.get('description')
+        detail_description = request.form.get('detail_description')
+        technologies = request.form.get('technologies')
+        
+        # Handle Image Upload
         image_url = request.form.get('image_url', '').strip()
+        if 'image_file' in request.files:
+            file = request.files['image_file']
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+                filename = f"{timestamp}_{filename}"
+                file.save(os.path.join(UPLOAD_FOLDER, filename))
+                image_url = url_for('static', filename=f'uploads/{filename}')
+        
+        # If no new image uploaded and no URL provided, keep existing
+        if not image_url:
+            image_url = project['image_url']
+
         try:
             progress = int(request.form.get('progress', 0))
         except ValueError:
@@ -215,8 +260,8 @@ def ai_edit(project_id):
             return redirect(url_for('ai_edit', project_id=project_id))
             
         conn = get_db_connection()
-        conn.execute('UPDATE ai_projects SET title = ?, github_url = ?, description = ?, image_url = ?, progress = ? WHERE id = ?',
-                     (title, github_url, description, image_url, progress, project_id))
+        conn.execute('UPDATE ai_projects SET title = ?, github_url = ?, description = ?, detail_description = ?, technologies = ?, image_url = ?, progress = ? WHERE id = ?',
+                     (title, github_url, description, detail_description, technologies, image_url, progress, project_id))
         conn.commit()
         conn.close()
         
