@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Upload Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/bootstrap.min.css') }}">
+  <style>body{padding:2rem;background:#0b1220;color:#e6eef6} .card{padding:1.5rem;border-radius:8px}</style>
+</head>
+<body>
+  <div class="container">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mb-3">Back</a>
+    <div class="card">
+      <h3>Upload Project</h3>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, msg in messages %}
+            <div class="alert alert-{{ category }}">{{ msg }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form method="post" enctype="multipart/form-data" action="{{ url_for('blog_upload') }}">
+        <div class="mb-3">
+          <label class="form-label">Project Name</label>
+          <input name="name" class="form-control" required/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea name="description" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">GitHub Link</label>
+          <input name="github_link" class="form-control" placeholder="https://github.com/..." />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Completion Time</label>
+          <input name="completion_time" type="date" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image URL</label>
+          <input name="image_url" type="text" class="form-control" placeholder="https://example.com/image.jpg" />
+        </div>
+        <button class="btn btn-primary" type="submit">Save Project</button>
+      </form>
+    </div>
+
+    <div class="card mt-4">
+      <h3>All Posts</h3>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for post in posts %}
+          <tr>
+            <td>{{ post.name }}</td>
+            <td>{{ post.description }}</td>
+            <td>
+              <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btn btn-sm btn-warning">Edit</a>
+              <form action="{{ url_for('delete_post', post_id=post.id) }}" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

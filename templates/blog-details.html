@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>{{ post['name'] }} - Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/bootstrap.min.css') }}">
+  <style>body{background:#0b1220;color:#e6eef6} .post-card{padding:2rem;max-width:900px;margin:2rem auto;background:#0f1724;border-radius:8px}</style>
+</head>
+<body>
+  <div class="container">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back</a>
+    <div class="post-card">
+      {% if post['image_url'] %}
+        <img src="{{ post['image_url'] }}" alt="{{ post['name'] }}" style="width:100%;border-radius:6px;margin-bottom:1rem">
+      {% endif %}
+      <h1>{{ post['name'] }}</h1>
+      <p class="text-muted">Completed: {{ post['completion_time'] or post['created_at'] }}</p>
+      <p>{{ post['description'] }}</p>
+      {% if post['github_link'] %}
+        <p><a href="{{ post['github_link'] }}" target="_blank" rel="noopener">View on GitHub</a></p>
+      {% endif %}
+      <p class="text-muted"><small>Saved: {{ post['created_at'] }}</small></p>
+    </div>
+  </div>
+</body>
+</html>

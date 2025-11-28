@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Manage AI Projects - Leon</title>
+    <script src="{{ url_for('static', filename='assets/js/vendors/color-modes.js') }}"></script>
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{{ url_for('static', filename='assets/imgs/template/favicon-gradient.svg') }}" />
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/swiper-bundle.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/aos.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/odometer.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/carouselTicker.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/remixicon/remixicon.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/satoshi/satoshi.css') }}" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Playfair+Display:wght@400..900&family=Urbanist:wght@100..900&display=swap"
+        rel="stylesheet" crossorigin />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body class="home-page-2">
+    <!-- Navbar -->
+    <header>
+        <div class="container position-relative">
+            <div class="position-relative">
+                <nav class="navbar navbar-expand-lg navbar-home-2 flex-nowrap z-999 p-0 border border-1 rounded-3">
+                    <a href="/"
+                        class="navbar-menu p-4 text-center square-100 menu-tigger icon_80 icon-shape d-none d-md-flex"
+                        data-bs-target=".offCanvas__info" aria-controls="offCanvas__info">
+                        <i class="ri-menu-2-line"></i>
+                    </a>
+                    <div class="container py-3 px-4">
+                        <a class="navbar-brand d-flex main-logo align-items-center" href="/">
+                            <img src="{{ url_for('static', filename='assets/imgs/home-page-2/template/favicon.svg') }}"
+                                alt="leon motaung" />
+                            <span class="fs-4 ms-2">Leon.dev</span>
+                        </a>
+                        <div class="d-none d-lg-flex">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="/ai">AI & ML</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#about">About me</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#resume">Resume</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#services">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#portfolio">Portfolio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#blog">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
+                            <div class="d-md-flex d-none gap-3">
+                                <a href="https://www.linkedin.com/in/leonmotaung/">
+                                    <i class="ri-linkedin-fill fs-18"></i>
+                                </a>
+                                <a href="https://github.com/LeonMotaung/">
+                                    <i class="ri-github-fill fs-18"></i>
+                                </a>
+                            </div>
+                            <div class="burger-icon burger-icon-white border rounded-3">
+                                <span class="burger-icon-top"></span>
+                                <span class="burger-icon-mid"></span>
+                                <span class="burger-icon-bottom"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="dark-light-switcher pe-10 pe-lg-0 pe-0 ps-md-5 ps-0 ps-lg-4 pe-lg-4 d-flex justify-content-center align-items-center icon_80">
+                        <i class="ri-sun-fill text-warning"></i>
+                        <i class="ri-contrast-2-line text-white"></i>
+                    </div>
+                </nav>
+            </div>
+            <!-- offCanvas-menu -->
+            <div class="offCanvas__info style-2">
+                <div class="offCanvas__close-icon menu-close">
+                    <button><i class="ri-close-line"></i></button>
+                </div>
+                <div class="offCanvas__logo mb-5">
+                    <h3 class="mb-0">Get in touch</h3>
+                </div>
+                <div class="offCanvas__side-info mb-30">
+                    <div class="contact-list mb-30">
+                        <p class="fs-6 fw-medium text-200 mb-5">As a full-stack developer, I thrive on tackling new
+                            challenges and bringing ideas to life. I’m always excited to take on projects that push the
+                            boundaries of innovation and collaborate with like-minded, creative individuals.</p>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Phone Number</span>
+                            <p class="mb-0">+27 84 866 2418</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Email</span>
+                            <p class="mb-0">motaungleon@gmail.com</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Linkedin</span>
+                            <p class="mb-0">Leon Motaung</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Address</span>
+                            <p class="mb-0">12 Vermeer street, Bellville, Cape Town, 7530</p>
+                        </div>
+                    </div>
+                    <div class="contact-list">
+                        <p class="text-400 fs-5 mb-2">Social</p>
+                        <div class="d-md-flex d-none gap-3">
+
+                            <a href="https://www.linkedin.com/in/leonmotaung/">
+                                <i class="ri-linkedin-fill fs-18"></i>
+                            </a>
+                            <a href="https://github.com/LeonMotaung/">
+                                <i class="ri-github-fill fs-18"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offCanvas__overly"></div>
+            <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar button-bg-2">
+                <div class="mobile-header-wrapper-inner">
+                    <div class="mobile-header-logo">
+                        <a class="d-flex main-logo align-items-center d-inline-flex" href="/">
+                            <img src="{{ url_for('static', filename='assets/imgs/home-page-2/template/favicon.svg') }}"
+                                alt="leon motaung" />
+                            <span class="fs-4 ms-2 text-dark">leon.dev</span>
+                        </a>
+                        <div class="burger-icon burger-icon-white border rounded-3">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                    <div class="mobile-header-content-area">
+                        <div class="perfect-scroll">
+                            <div class="mobile-menu-wrap mobile-header-border">
+                                <nav>
+                                    <ul class="mobile-menu font-heading ps-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/ai">AI & ML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#about">About me</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#resume">Resume</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#services">Services</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#portfolio">Portfolio</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#blog">Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#contact">Contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-hero-2 position-relative pt-130 pb-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="mb-0">Manage AI Projects</h2>
+                            <a href="/ai-create" class="btn btn-primary">
+                                <i class="ri-add-line"></i> Add New
+                            </a>
+                        </div>
+
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+
+                        <!-- Desktop Table View -->
+                        <div class="d-none d-lg-block">
+                            <div class="card bg-3 border-1 rounded-3 overflow-hidden">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0" style="color: inherit;">
+                                        <thead class="bg-2">
+                                            <tr>
+                                                <th class="p-3">Image</th>
+                                                <th class="p-3">Title</th>
+                                                <th class="p-3">Created At</th>
+                                                <th class="p-3">Progress</th>
+                                                <th class="p-3 text-end">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for project in projects %}
+                                            <tr>
+                                                <td class="p-3 align-middle">
+                                                    {% if project.image_url %}
+                                                    {% set images = project.image_url.split(',') %}
+                                                    <img src="{{ images[0].strip() }}" alt="{{ project.title }}"
+                                                        class="rounded"
+                                                        style="width: 50px; height: 50px; object-fit: cover;">
+                                                    {% else %}
+                                                    <div class="rounded bg-secondary d-flex align-items-center justify-content-center"
+                                                        style="width: 50px; height: 50px;">
+                                                        <i class="ri-image-line text-white"></i>
+                                                    </div>
+                                                    {% endif %}
+                                                </td>
+                                                <td class="p-3 align-middle">
+                                                    <a href="/ai-{{ project.id }}"
+                                                        class="text-decoration-none text-reset fw-bold">{{
+                                                        project.title
+                                                        }}</a>
+                                                </td>
+                                                <td class="p-3 align-middle">{{
+                                                    project.created_at[:10] }}</td>
+                                                <td class="p-3 align-middle">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <div class="progress flex-grow-1"
+                                                            style="height: 5px; width: 100px;">
+                                                            <div class="progress-bar bg-success" role="progressbar"
+                                                                style="width: {{ project.progress }}%"
+                                                                aria-valuenow="{{ project.progress }}" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                        <span class="small">{{ project.progress
+                                                            }}%</span>
+                                                    </div>
+                                                </td>
+                                                <td class="p-3 align-middle text-end">
+                                                    <div class="d-flex justify-content-end gap-2">
+                                                        <a href="/ai-edit/{{ project.id }}"
+                                                            class="btn btn-sm btn-outline-info">
+                                                            <i class="ri-edit-line"></i> Edit
+                                                        </a>
+                                                        <form action="/ai-delete/{{ project.id }}" method="POST"
+                                                            onsubmit="return confirm('Are you sure you want to delete this project?');"
+                                                            style="display: inline;">
+                                                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                                <i class="ri-delete-bin-line"></i>
+                                                                Delete
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% else %}
+                                            <tr>
+                                                <td colspan="5" class="text-center p-5">No
+                                                    projects found.</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile/Tablet Card View -->
+                        <div class="d-lg-none">
+                            {% for project in projects %}
+                            <div class="card bg-3 border-1 rounded-3 mb-3">
+                                <div class="card-body p-3">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        {% if project.image_url %}
+                                        {% set images = project.image_url.split(',') %}
+                                        <img src="{{ images[0].strip() }}" alt="{{ project.title }}" class="rounded"
+                                            style="width: 60px; height: 60px; object-fit: cover;">
+                                        {% else %}
+                                        <div class="rounded bg-secondary d-flex align-items-center justify-content-center"
+                                            style="width: 60px; height: 60px;">
+                                            <i class="ri-image-line text-white fs-4"></i>
+                                        </div>
+                                        {% endif %}
+                                        <div>
+                                            <h5 class="card-title mb-1">
+                                                <a href="/ai-{{ project.id }}"
+                                                    class="text-decoration-none text-reset">{{
+                                                    project.title }}</a>
+                                            </h5>
+                                            <span class="badge bg-secondary">{{
+                                                project.created_at[:10] }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="progress flex-grow-1" style="height: 5px;">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: {{ project.progress }}%"
+                                                    aria-valuenow="{{ project.progress }}" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                            <span class="small">{{ project.progress }}%</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="/ai-edit/{{ project.id }}"
+                                            class="btn btn-sm btn-outline-info flex-grow-1">
+                                            <i class="ri-edit-line"></i> Edit
+                                        </a>
+                                        <form action="/ai-delete/{{ project.id }}" method="POST"
+                                            onsubmit="return confirm('Are you sure you want to delete this project?');"
+                                            class="flex-grow-1">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger w-100">
+                                                <i class="ri-delete-bin-line"></i> Delete
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="text-center p-5 card bg-3 border-1 rounded-3">
+                                <p class="mb-0">No projects found.</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='assets/js/vendors/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/odometer.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/carouselTicker.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/magnific-popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/gsap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/ScrollTrigger.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/SplitText.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+
+</html>

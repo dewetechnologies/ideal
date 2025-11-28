@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Edit Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/bootstrap.min.css') }}">
+  <style>body{padding:2rem;background:#0b1220;color:#e6eef6} .card{padding:1.5rem;border-radius:8px}</style>
+</head>
+<body>
+  <div class="container">
+    <a href="{{ url_for('blog_upload') }}" class="btn btn-secondary mb-3">Back</a>
+    <div class="card">
+      <h3>Edit Project</h3>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, msg in messages %}
+            <div class="alert alert-{{ category }}">{{ msg }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form method="post">
+        <div class="mb-3">
+          <label class="form-label">Project Name</label>
+          <input name="name" class="form-control" value="{{ post.name }}" required/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea name="description" class="form-control" rows="4">{{ post.description }}</textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">GitHub Link</label>
+          <input name="github_link" class="form-control" placeholder="https://github.com/..." value="{{ post.github_link }}" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Completion Time</label>
+          <input name="completion_time" type="date" class="form-control" value="{{ post.completion_time }}" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image URL</label>
+          <input name="image_url" type="text" class="form-control" placeholder="https://example.com/image.jpg" value="{{ post.image_url }}" />
+        </div>
+        <button class="btn btn-primary" type="submit">Update Project</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{{ project.title }} - AI Project</title>
+    <script src="{{ url_for('static', filename='assets/js/vendors/color-modes.js') }}"></script>
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{{ url_for('static', filename='assets/imgs/template/favicon-gradient.svg') }}" />
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/swiper-bundle.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/aos.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/odometer.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/carouselTicker.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/remixicon/remixicon.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/satoshi/satoshi.css') }}" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Playfair+Display:wght@400..900&family=Urbanist:wght@100..900&display=swap"
+        rel="stylesheet" crossorigin />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body class="home-page-2">
+    <!-- Navbar -->
+    <header>
+        <div class="container position-relative">
+            <div class="position-relative">
+                <nav class="navbar navbar-expand-lg navbar-home-2 flex-nowrap z-999 p-0 border border-1 rounded-3">
+                    <a href="/"
+                        class="navbar-menu p-4 text-center square-100 menu-tigger icon_80 icon-shape d-none d-md-flex"
+                        data-bs-target=".offCanvas__info" aria-controls="offCanvas__info">
+                        <i class="ri-menu-2-line"></i>
+                    </a>
+                    <div class="container py-3 px-4">
+                        <a class="navbar-brand d-flex main-logo align-items-center" href="/">
+                            <img src="{{ url_for('static', filename='assets/imgs/home-page-2/template/favicon.svg') }}"
+                                alt="leon motaung" />
+                            <span class="fs-4 ms-2">Leon.dev</span>
+                        </a>
+                        <div class="d-none d-lg-flex">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="/ai">AI & ML</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#about">About me</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#resume">Resume</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#services">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#portfolio">Portfolio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#blog">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navbar-social d-flex align-items-center pe-5 pe-lg-0 me-5 me-lg-0">
+                            <div class="d-md-flex d-none gap-3">
+                                <a href="https://www.linkedin.com/in/leonmotaung/">
+                                    <i class="ri-linkedin-fill fs-18"></i>
+                                </a>
+                                <a href="https://github.com/LeonMotaung/">
+                                    <i class="ri-github-fill fs-18"></i>
+                                </a>
+                            </div>
+                            <div class="burger-icon burger-icon-white border rounded-3">
+                                <span class="burger-icon-top"></span>
+                                <span class="burger-icon-mid"></span>
+                                <span class="burger-icon-bottom"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="dark-light-switcher pe-10 pe-lg-0 pe-0 ps-md-5 ps-0 ps-lg-4 pe-lg-4 d-flex justify-content-center align-items-center icon_80 @@classList">
+                        <i class="ri-sun-fill text-warning"></i>
+                        <i class="ri-contrast-2-line text-white"></i>
+                    </div>
+                </nav>
+            </div>
+            <!-- offCanvas-menu -->
+            <div class="offCanvas__info style-2">
+                <div class="offCanvas__close-icon menu-close">
+                    <button><i class="ri-close-line"></i></button>
+                </div>
+                <div class="offCanvas__logo mb-5">
+                    <h3 class="mb-0">Get in touch</h3>
+                </div>
+                <div class="offCanvas__side-info mb-30">
+                    <div class="contact-list mb-30">
+                        <p class="fs-6 fw-medium text-200 mb-5">As a full-stack developer, I thrive on tackling new
+                            challenges and bringing ideas to life. I’m always excited to take on projects that push the
+                            boundaries of innovation and collaborate with like-minded, creative individuals.</p>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Phone Number</span>
+                            <p class="mb-0">+27 84 866 2418</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Email</span>
+                            <p class="mb-0">motaungleon@gmail.com</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Linkedin</span>
+                            <p class="mb-0">Leon Motaung</p>
+                        </div>
+                        <div class="mb-3">
+                            <span class="text-400 fs-5">Address</span>
+                            <p class="mb-0">12 Vermeer street, Bellville, Cape Town, 7530</p>
+                        </div>
+                    </div>
+                    <div class="contact-list">
+                        <p class="text-400 fs-5 mb-2">Social</p>
+                        <div class="d-md-flex d-none gap-3">
+
+                            <a href="https://www.linkedin.com/in/leonmotaung/">
+                                <i class="ri-linkedin-fill fs-18"></i>
+                            </a>
+                            <a href="https://github.com/LeonMotaung/">
+                                <i class="ri-github-fill fs-18"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offCanvas__overly"></div>
+            <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar button-bg-2">
+                <div class="mobile-header-wrapper-inner">
+                    <div class="mobile-header-logo">
+                        <a class="d-flex main-logo align-items-center d-inline-flex" href="/">
+                            <img src="{{ url_for('static', filename='assets/imgs/home-page-2/template/favicon.svg') }}"
+                                alt="leon motaung" />
+                            <span class="fs-4 ms-2 text-dark">leon.dev</span>
+                        </a>
+                        <div class="burger-icon burger-icon-white border rounded-3">
+                            <span class="burger-icon-top"></span>
+                            <span class="burger-icon-mid"></span>
+                            <span class="burger-icon-bottom"></span>
+                        </div>
+                    </div>
+                    <div class="mobile-header-content-area">
+                        <div class="perfect-scroll">
+                            <div class="mobile-menu-wrap mobile-header-border">
+                                <nav>
+                                    <ul class="mobile-menu font-heading ps-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/ai">AI & ML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#about">About me</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#resume">Resume</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#services">Services</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#portfolio">Portfolio</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#blog">Blog</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/#contact">Contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-hero-2 position-relative pt-130 pb-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-4">
+                            <a href="/ai" class="text-decoration-none text-muted">
+                                <i class="ri-arrow-left-line"></i> Back to Timeline
+                            </a>
+                        </div>
+
+                        <div class="card bg-3 border-1 rounded-3 overflow-hidden">
+                            {% if project.image_url %}
+                            {% set images = project.image_url.split(',') %}
+                            {% if images|length > 1 %}
+                            <div class="swiper slider-two pb-4">
+                                <div class="swiper-wrapper">
+                                    {% for image in images %}
+                                    <div class="swiper-slide">
+                                        <div class="position-relative" style="height: 400px; overflow: hidden;">
+                                            <img src="{{ image.strip() }}" alt="{{ project.title }}"
+                                                class="w-100 h-100 object-fit-cover">
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            {% else %}
+                            <div class="position-relative" style="height: 400px; overflow: hidden;">
+                                <img src="{{ project.image_url }}" alt="{{ project.title }}"
+                                    class="w-100 h-100 object-fit-cover">
+                            </div>
+                            {% endif %}
+                            {% endif %}
+
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex justify-content-between align-items-start mb-4">
+                                    <div>
+                                        <h1 class="display-5 mb-2">{{ project.title }}</h1>
+                                        <p class="text-muted mb-0">Started: {{ project.created_at[:10] }}</p>
+                                    </div>
+                                    {% if project.github_url %}
+                                    <a href="{{ project.github_url }}" target="_blank" class="btn btn-outline-light">
+                                        <i class="ri-github-fill"></i> View on GitHub
+                                    </a>
+                                    {% endif %}
+                                </div>
+
+                                {% if project.progress %}
+                                <div class="mb-5">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="fw-bold">Project Progress</span>
+                                        <span>{{ project.progress }}%</span>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar bg-success" role="progressbar"
+                                            style="width: {{ project.progress }}%"
+                                            aria-valuenow="{{ project.progress }}" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                {% endif %}
+
+                                <div class="project-description">
+                                    <h3 class="h4 mb-3">About this project</h3>
+                                    <p class="lead">{{ project.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='assets/js/vendors/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/odometer.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/carouselTicker.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/magnific-popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/gsap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/ScrollTrigger.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendors/SplitText.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+</body>
+
+</html>

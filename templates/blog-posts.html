@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Projects</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/bootstrap.min.css') }}">
+  <style>.card{padding:1rem;margin-bottom:1rem}</style>
+</head>
+<body class="p-4">
+  <a href="{{ url_for('blog_upload') }}" class="btn btn-secondary mb-3">Upload new</a>
+  <div class="container">
+    {% if posts %}
+      <div class="row">
+        {% for p in posts %}
+          <div class="col-md-6">
+            <div class="card">
+              {% if p.image_url %}
+                <img src="{{ p.image_url }}" alt="" style="max-width:100%;height:auto;border-radius:6px;margin-bottom:.5rem">
+              {% endif %}
+              <h5>{{ p.name }}</h5>
+              <p>{{ p.description }}</p>
+              {% if p.github_link %}
+                <p><a href="{{ p.github_link }}" target="_blank" rel="noopener">GitHub</a></p>
+              {% endif %}
+              {% if p.completion_time %}
+                <small>Completed: {{ p.completion_time }}</small><br/>
+              {% endif %}
+              <small class="text-muted">Saved: {{ p.created_at }}</small>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No projects yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

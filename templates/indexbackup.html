@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <meta name="theme-color" content="#1a1a1a"/>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}">
+
+    <title>Puo App - Learn SA Languages</title>
+    <script src="{{ url_for('static', filename='assets/js/vendors/color-modes.js') }}"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='assets/imgs/template/favicon-gradient.svg') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendors/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        body { overflow: hidden; } /* Prevent scrolling during transitions */
+        
+        /* Screen Transitions */
+        .screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--bs-dark);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+            opacity: 1; visibility: visible;
+            padding: 1rem;
+        }
+        .screen.hidden { opacity: 0; visibility: hidden; z-index: -1; }
+
+        /* Splash Screen */
+        #splash-screen { z-index: 10000; }
+        .splash-content { text-align: center; }
+        .splash-logo { width: 120px; margin-bottom: 1rem; }
+        .splash-title { font-size: 2.5rem; color: #fff; font-weight: 700; }
+        .splash-subtitle { font-size: 1.2rem; color: var(--bs-secondary-color); }
+        .spinner { margin: 2rem auto 0; border: 4px solid rgba(255, 255, 255, 0.2); border-left-color: #A8FF53; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Language & Results Screen */
+        #language-selection-screen, #results-screen { z-index: 9999; }
+        .content-box { text-align: center; width: 100%; max-width: 420px; }
+        .language-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; width: 100%; }
+        .language-btn {
+            display: block; width: 100%; text-align: left;
+            background-color: var(--bs-tertiary-bg); border: 1px solid var(--bs-border-color);
+            color: var(--bs-body-color); padding: 0.9rem 1rem; border-radius: 0.5rem;
+            cursor: pointer; transition: background-color 0.2s, transform 0.08s;
+            font-size: 1rem; font-weight: 600;
+        }
+        .language-btn:hover { background-color: #A8FF53; color: #000; transform: translateY(-1px); }
+
+        /* Main App Styles */
+        main { opacity: 0; transition: opacity 0.5s ease-in-out; display: none; }
+        main.visible { opacity: 1; display: block;}
+        
+        /* Quiz Styles */
+        .question-card { background-color: var(--bs-tertiary-bg); border: 1px solid var(--bs-border-color); border-radius: 0.5rem; padding: 2rem; text-align: center; }
+        .question-sound { font-size: 1.2rem; opacity: 0.7; }
+        .question-word { font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem; }
+        .options-container { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+        .option-btn { background-color: var(--bs-dark); border: 1px solid var(--bs-border-color); color: var(--bs-body-color); padding: 1rem; border-radius: 0.5rem; width: 100%; transition: background-color 0.3s; }
+        .option-btn.correct { background-color: #28a745; border-color: #28a745; color: white; }
+        .option-btn.incorrect { background-color: #dc3545; border-color: #dc3545; color: white; }
+        .option-btn:disabled:not(.correct):not(.incorrect) { opacity: 0.5; }
+        .quiz-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
+        #next-question-btn { display: none; } /* Initially hidden */
+    </style>
+</head>
+
+<body>
+    <div id="splash-screen" class="screen">
+        <div class="splash-content">
+            <img src="{{ url_for('static', filename='assets/imgs/template/favicon-gradient.svg') }}" alt="Puo App Logo" class="splash-logo">
+            <h1 class="splash-title">Puo App</h1>
+            <p class="splash-subtitle">South African Languages</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <div id="language-selection-screen" class="screen hidden">
+        <div class="content-box">
+            <h2 class="mb-3">Choose a Language</h2>
+            <div class="language-grid">
+                <button class="language-btn" data-lang="isizulu">isiZulu</button>
+                <button class="language-btn" data-lang="isixhosa">isiXhosa</button>
+                <button class="language-btn" data-lang="afrikaans">Afrikaans</button>
+                <button class="language-btn" data-lang="english">English</button>
+                <button class="language-btn" data-lang="sepedi">Sepedi</button>
+                <button class="language-btn" data-lang="setswana">Setswana</button>
+                <button class="language-btn" data-lang="sesotho">Sesotho</button>
+                <button class="language-btn" data-lang="xitsonga">Xitsonga</button>
+                <button class="language-btn" data-lang="siswati">siSwati</button>
+                <button class="language-btn" data-lang="tshivenda">Tshivenda</button>
+                <button class="language-btn" data-lang="isindebele">isiNdebele</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="results-screen" class="screen hidden">
+        <div class="content-box">
+            <h2 class="mb-2">Quiz Complete!</h2>
+            <p id="results-language" class="text-secondary fs-5"></p>
+            <p id="final-score" class="display-4 fw-bold my-4"></p>
+            <button id="play-again-btn" class="btn btn-primary-2 rounded-2 w-100">Play Again</button>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container py-3 px-4">
+             <a class="navbar-brand d-flex main-logo align-items-center" href="/">
+                <img src="{{ url_for('static', filename='assets/imgs/template/favicon-gradient.svg') }}" alt="Puo App Icon" />
+                <span class="fs-4 ms-2">Puo App</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="quiz-mode" class="section-experience pt-5 pb-5">
+            <div class="container">
+                <h3 id="quiz-header">Quiz: <span id="deck-title" class="text-300"></span></h3>
+                <div class="quiz-container mt-4">
+                    <div class="question-card">
+                        <p id="question-sound" class="question-sound"></p>
+                        <h2 id="question-word" class="question-word"></h2>
+                        <div id="options-container" class="options-container"></div>
+                    </div>
+                    <div class="quiz-controls">
+                        <span id="card-progress" class="text-300 fs-6"></span>
+                        <button id="next-question-btn" class="btn btn-primary-2 rounded-2">Next <i class="ri-arrow-right-s-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- DATA ---
+            const languageDecks = {
+                isizulu: { name: 'isiZulu', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['dog', 'mother', 'tree'] }, { sound: 'imemelo', word: 'imemelo', meaning: 'celebration', options: ['celebration', 'river', 'car'] }, { sound: 'imithi', word: 'imithi', meaning: 'trees', options: ['trees', 'cows', 'fish'] }, { sound: 'umoya', word: 'umoya', meaning: 'air', options: ['air', 'water', 'book'] }, { sound: 'umuntu', word: 'umuntu', meaning: 'person', options: ['person', 'stone', 'chair'] } ] },
+                isixhosa: { name: 'isiXhosa', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['father', 'mother', 'bird'] }, { sound: 'imela', word: 'imela', meaning: 'knife', options: ['pen', 'knife', 'cat'] }, { sound: 'imithi', word: 'imithi', meaning: 'trees', options: ['trees', 'shoes', 'stars'] }, { sound: 'imoto', word: 'imoto', meaning: 'car', options: ['house', 'car', 'cow'] }, { sound: 'umuntu', word: 'umuntu', meaning: 'person', options: ['child', 'person', 'fish'] } ] },
+                afrikaans: { name: 'Afrikaans', questions: [ { sound: 'maan', word: 'maan', meaning: 'moon', options: ['sun', 'moon', 'dog'] }, { sound: 'mes', word: 'mes', meaning: 'knife', options: ['knife', 'tree', 'hat'] }, { sound: 'mielie', word: 'mielie', meaning: 'corn', options: ['bread', 'corn', 'apple'] }, { sound: 'motor', word: 'motor', meaning: 'car', options: ['car', 'cow', 'shoe'] }, { sound: 'muur', word: 'muur', meaning: 'wall', options: ['chair', 'wall', 'fish'] } ] },
+                english: { name: 'English', questions: [ { sound: 'map', word: 'map', meaning: 'drawing of places', options: ['car', 'map', 'toy'] }, { sound: 'melon', word: 'melon', meaning: 'fruit', options: ['fruit', 'table', 'hat'] }, { sound: 'milk', word: 'milk', meaning: 'drink', options: ['water', 'milk', 'stone'] }, { sound: 'moon', word: 'moon', meaning: 'night object', options: ['moon', 'tree', 'fish'] }, { sound: 'mug', word: 'mug', meaning: 'cup', options: ['mug', 'car', 'pen'] } ] },
+                sepedi: { name: 'Sepedi', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['dog', 'mother', 'shoe'] }, { sound: 'meetse', word: 'meetse', meaning: 'water', options: ['water', 'car', 'fruit'] }, { sound: 'mpho', word: 'mpho', meaning: 'porridge', options: ['porridge', 'bird', 'car'] }, { sound: 'mohlare', word: 'mohlare', meaning: 'tree', options: ['chair', 'tree', 'cup'] }, { sound: 'mmutla', word: 'mmutla', meaning: 'rabbit', options: ['cat', 'rabbit', 'cow'] } ] },
+                setswana: { name: 'Setswana', questions: [ { sound: 'madi', word: 'madi', meaning: 'money', options: ['car', 'money', 'book'] }, { sound: 'mete', word: 'mete', meaning: 'spoon', options: ['spoon', 'fish', 'fruit'] }, { sound: 'milo', word: 'milo', meaning: 'food', options: ['food', 'tree', 'cup'] }, { sound: 'motho', word: 'motho', meaning: 'person', options: ['person', 'shoe', 'house'] }, { sound: 'mmutla', word: 'mmutla', meaning: 'rabbit', options: ['cow', 'rabbit', 'chair'] } ] },
+                sesotho: { name: 'Sesotho', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['mother', 'bird', 'fish'] }, { sound: 'metsi', word: 'metsi', meaning: 'water', options: ['water', 'shoe', 'car'] }, { sound: 'mpho', word: 'mpho', meaning: 'porridge', options: ['porridge', 'bed', 'dog'] }, { sound: 'motho', word: 'motho', meaning: 'person', options: ['person', 'cat', 'house'] }, { sound: 'mmutla', word: 'mmutla', meaning: 'rabbit', options: ['rabbit', 'fish', 'book'] } ] },
+                xitsonga: { name: 'Xitsonga', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['father', 'mother', 'hat'] }, { sound: 'mela', word: 'mela', meaning: 'grow', options: ['grow', 'sleep', 'jump'] }, { sound: 'miri', word: 'miri', meaning: 'body', options: ['tree', 'body', 'fish'] }, { sound: 'moto', word: 'moto', meaning: 'car', options: ['car', 'cow', 'book'] }, { sound: 'muti', word: 'muti', meaning: 'home', options: ['water', 'home', 'shoe'] } ] },
+                siswati: { name: 'siSwati', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['tree', 'mother', 'chair'] }, { sound: 'emehlo', word: 'emehlo', meaning: 'eyes', options: ['ears', 'eyes', 'feet'] }, { sound: 'imitsi', word: 'imitsi', meaning: 'trees', options: ['stones', 'trees', 'birds'] }, { sound: 'umoya', word: 'umoya', meaning: 'air', options: ['water', 'air', 'light'] }, { sound: 'umuntfu', word: 'umuntfu', meaning: 'person', options: ['person', 'bird', 'car'] } ] },
+                tshivenda: { name: 'Tshivenda', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['father', 'mother', 'sun'] }, { sound: 'meme', word: 'meme', meaning: 'call/shout', options: ['run', 'call', 'sing'] }, { sound: 'miri', word: 'miri', meaning: 'trees', options: ['trees', 'dogs', 'fish'] }, { sound: 'muthu', word: 'muthu', meaning: 'person', options: ['person', 'chair', 'tree'] }, { sound: 'mulambo', word: 'mulambo', meaning: 'river', options: ['mountain', 'river', 'bird'] } ] },
+                isindebele: { name: 'isiNdebele', questions: [ { sound: 'mama', word: 'mama', meaning: 'mother', options: ['mother', 'dog', 'hat'] }, { sound: 'imela', word: 'imela', meaning: 'knife', options: ['spoon', 'knife', 'fish'] }, { sound: 'imithi', word: 'imithi', meaning: 'trees', options: ['stones', 'trees', 'cows'] }, { sound: 'umoya', word: 'umoya', meaning: 'air', options: ['car', 'air', 'fruit'] }, { sound: 'umuntu', word: 'umuntu', meaning: 'person', options: ['chair', 'person', 'cat'] } ] }
+            };
+
+            // --- DOM Elements ---
+            const splashScreen = document.getElementById('splash-screen');
+            const langSelectScreen = document.getElementById('language-selection-screen');
+            const resultsScreen = document.getElementById('results-screen');
+            const mainContent = document.getElementById('main-content');
+            const langButtons = document.querySelectorAll('.language-btn');
+            const deckTitleEl = document.getElementById('deck-title');
+            const questionSoundEl = document.getElementById('question-sound');
+            const questionWordEl = document.getElementById('question-word');
+            const optionsContainer = document.getElementById('options-container');
+            const progressIndicator = document.getElementById('card-progress');
+            const nextButton = document.getElementById('next-question-btn');
+            const playAgainButton = document.getElementById('play-again-btn');
+            const finalScoreEl = document.getElementById('final-score');
+            const resultsLangEl = document.getElementById('results-language');
+            
+            // --- State ---
+            let currentDeck = {};
+            let currentIndex = 0;
+            let answered = false;
+            let score = 0;
+
+            // --- Functions ---
+            function showScreen(screenToShow) {
+                [splashScreen, langSelectScreen, resultsScreen].forEach(s => s.classList.add('hidden'));
+                mainContent.classList.remove('visible');
+                if (screenToShow) screenToShow.classList.remove('hidden');
+            }
+
+            function loadQuestion(index) {
+                answered = false;
+                const question = currentDeck.questions[index];
+                deckTitleEl.textContent = currentDeck.name;
+                questionSoundEl.textContent = question.sound;
+                questionWordEl.textContent = question.word;
+                progressIndicator.textContent = `Question ${index + 1} / ${currentDeck.questions.length}`;
+
+                optionsContainer.innerHTML = '';
+                question.options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.className = 'option-btn';
+                    button.textContent = option;
+                    button.addEventListener('click', () => handleAnswer(button, option, question.meaning));
+                    optionsContainer.appendChild(button);
+                });
+                nextButton.style.display = 'none';
+            }
+
+            function handleAnswer(button, selectedOption, correctAnswer) {
+                if (answered) return;
+                answered = true;
+                
+                const allButtons = optionsContainer.querySelectorAll('.option-btn');
+                allButtons.forEach(btn => {
+                    btn.disabled = true;
+                    if (btn.textContent === correctAnswer) {
+                        btn.classList.add('correct');
+                    } else if (btn === button) {
+                        btn.classList.add('incorrect');
+                    }
+                });
+                if (selectedOption === correctAnswer) score++;
+                nextButton.style.display = 'block';
+            }
+
+            function startQuiz(lang) {
+                currentDeck = languageDecks[lang];
+                currentIndex = 0;
+                score = 0;
+                showScreen(null); // Hide all overlay screens
+                mainContent.classList.add('visible');
+                loadQuestion(currentIndex);
+            }
+
+            function showResults() {
+                finalScoreEl.textContent = `${score} / ${currentDeck.questions.length}`;
+                resultsLangEl.textContent = currentDeck.name;
+                showScreen(resultsScreen);
+            }
+
+            // --- Event Listeners ---
+            langButtons.forEach(button => button.addEventListener('click', () => startQuiz(button.dataset.lang)));
+            playAgainButton.addEventListener('click', () => showScreen(langSelectScreen));
+
+            nextButton.addEventListener('click', () => {
+                currentIndex++;
+                if (currentIndex < currentDeck.questions.length) {
+                    loadQuestion(currentIndex);
+                } else {
+                    showResults();
+                }
+            });
+
+            // --- Initial Flow ---
+            setTimeout(() => {
+                showScreen(langSelectScreen);
+            }, 2500); // Show language selection after splash screen
+        });
+
+        // PWA Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register("{{ url_for('static', filename='sw.js') }}")
+                    .then(reg => console.log('Service worker registered.'))
+                    .catch(err => console.log('Service worker not registered: ', err));
+            });
+        }
+    </script>
+</body>
+</html>
