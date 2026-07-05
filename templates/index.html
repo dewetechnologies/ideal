@@ -1401,7 +1401,7 @@
             </div>
         </section>
 
-                        <!-- UWC Modules Section -->
+                                <!-- UWC Modules Section -->
         <section id="modules" class="section-modules pt-5">
             <style>
                 .module-accordion-item {
@@ -1448,6 +1448,43 @@
                 .module-accordion-item.active .chevron-icon {
                     transform: rotate(180deg);
                 }
+                .book-card {
+                    transition: all 0.3s ease;
+                    border-color: var(--tc-border-1) !important;
+                }
+                .book-card:hover {
+                    transform: translateY(-5px);
+                    border-color: var(--tc-theme-primary-2) !important;
+                    box-shadow: 0 4px 15px rgba(168, 255, 83, 0.1);
+                }
+                .book-img {
+                    transition: transform 0.3s ease;
+                }
+                .book-card:hover .book-img {
+                    transform: scale(1.05);
+                }
+                .floating-whatsapp {
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    z-index: 9999;
+                    background-color: #25D366;
+                    color: white;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                }
+                .floating-whatsapp:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+                    color: white;
+                }
             </style>
             <div class="container">
                 <div class="rounded-3 border border-1 position-relative overflow-hidden bg-3">
@@ -1463,7 +1500,103 @@
                         </div>
                         <h3 class="mb-5">Modules Covered at the University of the Western Cape</h3>
 
-                        <div class="modules-accordion">
+                        <!-- Books Used Section -->
+                        <div class="mb-5">
+                            <h4 class="text-linear-4 mb-4"><i class="ri-book-3-line text-primary-2 me-2"></i>Textbooks & Resources Used</h4>
+                            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3 justify-content-center">
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVlLgcucefOrET2LRjaVxp6-AiVZ3NS3v4vzJxMslalqiIauA5DzKJfiGz&s=10" alt="Drury Management Accounting" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Drury Management Accounting</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://media.takealot.com/covers_tsins/56767417/9780190749040-1-pdpxl.JPG" alt="Auditing 2" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Auditing 2</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://textbooktrader.co.za/files/000545/gallery/00/00/09/00000944_medium-240.jpg" alt="Auditing 1" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Auditing 1</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://img.bobshop.co.za/image/upload/f_auto,c_fit,w_900,h_900,d_notfound.png/user_images/936/3802936/231003161048_4873245166_8ae497c2e4_b.jpg" alt="Accounting" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Accounting</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://m.media-amazon.com/images/I/413CdNsEXFL._SY425_.jpg" alt="Business Management" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Business Management</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://pentzbooks.co.za/cdn/shop/files/SAICA-V3-500x500_f9167893-4b57-4fb2-85ca-35c97965a751_580x.jpg?v=1767949379" alt="Taxation" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Taxation</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://textbooktrader.co.za/files/000545/gallery/00/01/23/00012207_medium-240.jpg" alt="Accounting" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Accounting</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://textbooktrader.co.za/files/000545/gallery/00/00/08/00000873_medium-240.jpg" alt="Economics" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Economics</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://textbooktrader.co.za/files/000545/gallery/00/00/26/00002563_medium-240.jpg" alt="IFS" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">IFS</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://textbooktrader.co.za/files/000545/gallery/00/00/32/00003035_medium-240.jpg" alt="Accounting" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Accounting</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="book-card border border-1 rounded-3 p-3 bg-4 text-center h-100 d-flex flex-column justify-content-between">
+                                    <div class="book-img-container mb-2 overflow-hidden rounded bg-white p-1" style="height: 140px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--tc-border-1);">
+                                        <img src="https://textbooktrader.co.za/files/000545/gallery/00/01/07/00010573_medium-240.jpg" alt="Accounting" class="img-fluid book-img" style="max-height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <span class="text-dark small fw-semibold line-clamp-2" style="font-size: 13px;">Accounting</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion List -->
+                        <div class="modules-accordion mt-5">
                         <h4 class="text-linear-4 mb-4 mt-2">Year 1 Modules</h4>
                         <!-- alc131 Accordion Item -->
                         <div class="module-accordion-item border border-1 rounded-3 mb-3 bg-3" id="item-alc131">
@@ -1831,7 +1964,7 @@
                                             <ul class="ps-3 text-300 small d-flex flex-column gap-2">
                                                     <li>Record transactions manually in subsidiary journals and ledgers and do relevant controls</li>
                                                     <li>Recognition, measurement and classification of elements of the financial statements</li>
-                                                    <li>Financial Statements (Including statement of cash flows) of Close Corporations, Companies, and Non Profit Organisations</li>
+                                                    <li>Financial Statements (Including statement of cash flows) of close corporations, companies, and non-profit organisations</li>
                                                     <li>Analysis and Interpretation of financial statements</li>
                                             </ul>
 
@@ -2854,6 +2987,7 @@
 
 
 
+
         <!-- projects -->
         <section class="section-projects-2 pt-5">
             <div class="container">
@@ -3208,6 +3342,18 @@
                         </div>
                         <div class="d-flex align-items-center mb-3 position-relative d-inline-flex">
                             <div class="d-inline-block">
+                                <div class="icon-flip flex-nowrap icon-shape icon-xxl border border-1 rounded-3 bg-3" style="border-color: #25D366 !important;">
+                                    <i class="ri-whatsapp-line fs-26" style="color: #25D366 !important;"></i>
+                                </div>
+                            </div>
+                            <div class="ps-3 h-100">
+                                <span class="text-400 fs-6">WhatsApp</span>
+                                <h6 class="mb-0">+27 84 866 2418</h6>
+                            </div>
+                            <a href="https://wa.me/27848662418" target="_blank" rel="noopener noreferrer" class="position-absolute top-0 start-0 w-100 h-100"></a>
+                        </div>
+                        <div class="d-flex align-items-center mb-3 position-relative d-inline-flex">
+                            <div class="d-inline-block">
                                 <div class="icon-flip flex-nowrap icon-shape icon-xxl border border-1 rounded-3 bg-3">
                                     <i class="ri-mail-fill text-primary-2 fs-26"></i>
                                 </div>
@@ -3297,6 +3443,10 @@
     <script src="{{ url_for('static', filename='assets/js/vendors/aat.min.js') }}"></script>
     <!-- Theme JS -->
     <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/27848662418" target="_blank" rel="noopener noreferrer" class="floating-whatsapp">
+        <i class="ri-whatsapp-line" style="font-size: 32px;"></i>
+    </a>
 </body>
 
 </html>
