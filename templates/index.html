@@ -1401,9 +1401,27 @@
             </div>
         </section>
 
-        <!-- UWC Modules Section -->
+                <!-- UWC Modules Section -->
         <section id="modules" class="section-modules pt-5">
             <style>
+                .module-list {
+                    max-height: 550px;
+                    overflow-y: auto;
+                    padding-right: 8px;
+                }
+                .module-list::-webkit-scrollbar {
+                    width: 6px;
+                }
+                .module-list::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                .module-list::-webkit-scrollbar-thumb {
+                    background: var(--tc-border-1);
+                    border-radius: 3px;
+                }
+                .module-list::-webkit-scrollbar-thumb:hover {
+                    background: var(--tc-theme-primary-2);
+                }
                 .module-tab {
                     cursor: pointer;
                     transition: all 0.3s ease;
@@ -1434,31 +1452,224 @@
                     background-color: rgba(168, 255, 83, 0.1) !important;
                     border: 1px solid var(--tc-theme-primary-2) !important;
                 }
+                .module-group-title {
+                    letter-spacing: 0.05em;
+                }
             </style>
             <div class="container">
                 <div class="rounded-3 border border-1 position-relative overflow-hidden bg-3">
                     <div class="box-linear-animation position-relative z-1 p-3 p-md-6 p-lg-8">
-                        <div class="d-flex align-items-center mb-3">
-                            <svg class="text-primary-2 me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path class="fill-primary-2" d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM12 5.18L18.99 9L12 12.82L5.01 9L12 5.18ZM12 17.3L5 13.48V16.3L12 20.12L19 16.3V13.48L12 17.3Z" fill="#A8FF53" />
-                            </svg>
-                            <span class="text-linear-4 fw-bold">Academic Modules</span>
+                        <div class="d-flex align-items-center justify-content-between mb-5 flex-wrap gap-3">
+                            <div class="d-flex align-items-center">
+                                <svg class="text-primary-2 me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="fill-primary-2" d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM12 5.18L18.99 9L12 12.82L5.01 9L12 5.18ZM12 17.3L5 13.48V16.3L12 20.12L19 16.3V13.48L12 17.3Z" fill="#A8FF53" />
+                                </svg>
+                                <span class="text-linear-4 fw-bold">Academic Modules</span>
+                            </div>
+                            <img src="https://www.uwc.ac.za/img/default.png" alt="University of the Western Cape Logo" height="50px" class="bg-white p-1 rounded" style="object-fit: contain; border: 1px solid var(--tc-border-1);" />
                         </div>
                         <h3 class="mb-5">Modules Covered at the University of the Western Cape</h3>
 
                         <div class="row g-4">
                             <!-- Module Sidebar / Selection tabs -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 col-md-5">
                                 <div class="d-flex flex-column gap-2 module-list">
-                                    <!-- ALC131/132 Tab -->
-                                    <div class="module-tab border border-1 rounded-3 p-3 active" data-module="alc131">
+<div class="module-group-title text-primary-2 small fw-bold mb-2">YEAR 1 MODULES</div>\n                                    <!-- alc131 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="alc131">
                                         <div class="d-flex align-items-center gap-3">
-                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                                 <span class="fw-bold text-primary-2" style="font-size: 14px;">ALC</span>
                                             </div>
-                                            <div class="d-flex flex-column">
-                                                <h5 class="mb-0 text-dark">Academic Literacy</h5>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Academic Literacy for Commerce 131/132</h5>
                                                 <span class="text-300 small">ALC131 / ALC132</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- bus131 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="bus131">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">BUS</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Business Statistics 131/132</h5>
+                                                <span class="text-300 small">BUS131 / BUS132</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- eco152 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="eco152">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">ECO</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Macroeconomics 152</h5>
+                                                <span class="text-300 small">ECO152</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- fia141 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="fia141">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">FIA</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Financial Accounting 141/143</h5>
+                                                <span class="text-300 small">FIA141 / FIA143</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- fia142 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="fia142">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">FIA</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Financial Accounting 142</h5>
+                                                <span class="text-300 small">FIA142</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mam126 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="mam126">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">MAM</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Mathematics 126/127</h5>
+                                                <span class="text-300 small">MAM126 / MAM127</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- man131 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="man131">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">MAN</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Principles of Business Management 131/132</h5>
+                                                <span class="text-300 small">MAN131 / MAN132</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mer102 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="mer102">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">MER</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Mercantile Law 102</h5>
+                                                <span class="text-300 small">MER102</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- qsc131 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="qsc131">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">QSC</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Quantitative Skills for Commerce 131/132</h5>
+                                                <span class="text-300 small">QSC131 / QSC132</span>
+                                            </div>
+                                        </div>
+                                    </div>\n<div class="module-group-title text-primary-2 small fw-bold mt-4 mb-2">YEAR 2 MODULES</div>\n                                    <!-- aud241 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="aud241">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">AUD</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Internal Auditing 241</h5>
+                                                <span class="text-300 small">AUD241</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- aud242 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="aud242">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">AUD</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Internal Auditing 242</h5>
+                                                <span class="text-300 small">AUD242</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- bet242 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="bet242">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">BET</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Business Ethics 242</h5>
+                                                <span class="text-300 small">BET242</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- cpl211 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="cpl211">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">CPL</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Company Law 211</h5>
+                                                <span class="text-300 small">CPL211</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- fia242 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="fia242">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">FIA</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Financial Accounting 242</h5>
+                                                <span class="text-300 small">FIA242</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mac241 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="mac241">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">MAC</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Management Accounting 241</h5>
+                                                <span class="text-300 small">MAC241</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mcr221 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="mcr221">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">MCR</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Mercantile Law 221</h5>
+                                                <span class="text-300 small">MCR221</span>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- tax242 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="tax242">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">TAX</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Taxation 242</h5>
+                                                <span class="text-300 small">TAX242</span>
+                                            </div>
+                                        </div>
+                                    </div>\n<div class="module-group-title text-primary-2 small fw-bold mt-4 mb-2">YEAR 3 MODULES</div>\n                                    <!-- mac341 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 mb-2" data-module="mac341">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">MAC</span>
+                                            </div>
+                                            <div class="d-flex flex-column overflow-hidden">
+                                                <h5 class="mb-0 text-dark text-truncate" style="font-size: 14px; max-width: 170px;">Management Accounting 341</h5>
+                                                <span class="text-300 small">MAC341</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1466,12 +1677,12 @@
                             </div>
 
                             <!-- Module Detail Display Panel -->
-                            <div class="col-lg-8 ps-lg-4">
-                                <div class="border border-1 rounded-3 p-4 bg-4 h-100">
-                                    <!-- ALC131/132 Details -->
+                            <div class="col-lg-8 col-md-7 ps-lg-4">
+                                <div class="border border-1 rounded-3 p-4 bg-4 h-100" style="max-height: 550px; overflow-y: auto;">
+                                    <!-- alc131 Details -->
                                     <div id="details-alc131" class="module-detail-content">
                                         <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
-                                            <div>
+                                            <div style="max-width: 75%;">
                                                 <h4 class="text-linear-4 mb-1">Academic Literacy for Commerce 131/132</h4>
                                                 <p class="text-300 mb-0">Module Code: <strong>ALC131 / ALC132</strong> &bull; Core Module</p>
                                             </div>
@@ -1500,11 +1711,7 @@
                                         <div class="mb-4">
                                             <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
                                             <div class="d-flex flex-wrap gap-2">
-                                                <span class="badge-custom">BCom (1008, 1751)</span>
-                                                <span class="badge-custom">BCom (Accounting) (1021, 753)</span>
-                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span>
-                                                <span class="badge-custom">BCom (Law) (7211)</span>
-                                                <span class="badge-custom">BAdmin (1011)</span>
+                                                <span class="badge-custom">BCom (1008, 1751)</span> <span class="badge-custom">BCom (Accounting) (1021, 753)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (Law) (7211)</span> <span class="badge-custom">BAdmin (1011)</span>
                                             </div>
                                         </div>
 
@@ -1513,14 +1720,7 @@
                                             <div class="col-md-6">
                                                 <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
                                                 <ul class="ps-3 text-300 small d-flex flex-column gap-2">
-                                                    <li>Demonstrate the use of various listening and note-taking strategies.</li>
-                                                    <li>Demonstrate an understanding of group dynamics.</li>
-                                                    <li>Demonstrate an understanding of analytical and critical thinking.</li>
-                                                    <li>Apply critical and analytical reading skills in textbooks, journal articles, newspapers, and magazines.</li>
-                                                    <li>Write well-constructed written assignments and academic essays using references and quotations appropriately.</li>
-                                                    <li>Summarise main and supporting ideas in written texts.</li>
-                                                    <li>Write well-constructed reports and proposals.</li>
-                                                    <li>Effectively utilize IT-based productivity tools to organize and manage information.</li>
+                                                    <li>Demonstrate the use of various listening and note-taking strategies.</li>\n                                                    <li>Demonstrate an understanding of group dynamics.</li>\n                                                    <li>Demonstrate an understanding of analytical and critical thinking.</li>\n                                                    <li>Apply critical and analytical reading skills in textbooks, journal articles, newspapers, and magazines.</li>\n                                                    <li>Write well-constructed written assignments and academic essays using references and quotations appropriately.</li>\n                                                    <li>Summarise main and supporting ideas in written texts.</li>\n                                                    <li>Write well-constructed reports and proposals.</li>\n                                                    <li>Effectively utilize IT-based productivity tools to organize and manage information.</li>
                                                 </ul>
                                             </div>
 
@@ -1528,12 +1728,1027 @@
                                             <div class="col-md-6">
                                                 <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
                                                 <ul class="ps-3 text-300 small d-flex flex-column gap-2">
-                                                    <li>Listening and note-taking skills</li>
-                                                    <li>Group dynamics skills</li>
-                                                    <li>Critical thinking skills</li>
-                                                    <li>Reading and writing skills</li>
-                                                    <li>Referencing and quotation skills</li>
-                                                    <li>Digital information literacy skills</li>
+                                                    <li>Listening and note-taking skills</li>\n                                                    <li>Group dynamics skills</li>\n                                                    <li>Critical thinking skills</li>\n                                                    <li>Reading and writing skills</li>\n                                                    <li>Referencing and quotation skills</li>\n                                                    <li>Digital information literacy skills</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- bus131 Details -->
+                                    <div id="details-bus131" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Business Statistics 131/132</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>BUS131 / BUS132</strong> &bull; Elective Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 15 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Natural Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Statistics and Population Studies</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 150 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> BUS131 - First Semester / BUS132 - Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 60% / FA 40% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008, 1751)</span> <span class="badge-custom">BCom (Accounting) (1021, 1753)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (Information Systems) (1033)</span> <span class="badge-custom">BCom (Law) (7211)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Recognize the importance of statistics in both private and public sectors.</li>\n                                                    <li>Summarize data into summary measures (e.g. mean and standard deviation).</li>\n                                                    <li>Do simple statistical analysis.</li>\n                                                    <li>Use a computer to analyze data.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Descriptive statistics</li>\n                                                    <li>Simple linear regression analysis</li>\n                                                    <li>Probability</li>\n                                                    <li>Sampling distributions</li>\n                                                    <li>Inferential Statistics</li>\n                                                    <li>Index numbers</li>\n                                                    <li>Time Series</li>\n                                                    <li>Anova</li>\n                                                    <li>Chi-square</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- eco152 Details -->
+                                    <div id="details-eco152" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Macroeconomics 152</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>ECO152</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Economics</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> First Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008, 1751)</span> <span class="badge-custom">BCom (Accounting) (1021, 1753)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (Law) (7211)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Demonstrate an understanding of how the various sectors of the economy interrelate using basic macroeconomic tools and theories.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>The macroeconomic problem</li>\n                                                    <li>Circular flow of income</li>\n                                                    <li>National income accounting</li>\n                                                    <li>Basic aggregate demand and supply model</li>\n                                                    <li>Unemployment</li>\n                                                    <li>Money and banking</li>\n                                                    <li>Interest rates</li>\n                                                    <li>Inflation</li>\n                                                    <li>Exchange rates and the Balance of Payments accounts</li>\n                                                    <li>Fiscal and monetary policy</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- fia141 Details -->
+                                    <div id="details-fia141" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Financial Accounting 141/143</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>FIA141 / FIA143</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 15 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 150 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> FIA141 - First Semester / FIA143 - Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008, 1751)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (Law) (7211)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Define and apply the accounting concepts relating to the elements of the accounting equation.</li>\n                                                    <li>Record transactions using the double entry system.</li>\n                                                    <li>Distinguish between cash and accrual accounting.</li>\n                                                    <li>Apply accrual accounting and other adjustments to the pre-adjustment trial balance.</li>\n                                                    <li>Distinguish between two methods of recording inventory and be able to apply both.</li>\n                                                    <li>Prepare various control accounts and their reconciliation.</li>\n                                                    <li>Prepare the financial statements of a service and trading business.</li>\n                                                    <li>Analyse and do a basic interpretation of the financial statements of a sole proprietor.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Accounting as information system</li>\n                                                    <li>Data processing and double-entry bookkeeping</li>\n                                                    <li>Accounting for Value Added Tax.</li>\n                                                    <li>Operation of cash controls</li>\n                                                    <li>Bank reconciliation procedures</li>\n                                                    <li>Preparation of the financial statements (excluding statement of cash flows) of a sole trader</li>\n                                                    <li>Elementary analysis and interpretation of the financial statements of a sole trader</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- fia142 Details -->
+                                    <div id="details-fia142" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Financial Accounting 142</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>FIA142</strong> &bull; Core / Elective Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BEd (4401)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Apply the conceptual framework to the preparation of financial statements of different entities.</li>\n                                                    <li>Prepare the statement of cash flows on either the direct or indirect method.</li>\n                                                    <li>Apply the statement of cash flows in the analysis of performance and financial position of an entity.</li>\n                                                    <li>Analyse and interpret financial statements.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Record transactions manually in subsidiary journals and ledgers and do relevant controls</li>\n                                                    <li>Recognition, measurement and classification of elements of the financial statements</li>\n                                                    <li>Financial Statements (Including statement of cash flows) of close corporations, companies, and non-profit organisations</li>\n                                                    <li>Analysis and Interpretation of financial statements</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mam126 Details -->
+                                    <div id="details-mam126" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Mathematics 126/127</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>MAM126 / MAM127</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Natural Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Mathematics and Applied Mathematics</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> MAM126 - First Semester / MAM127 - Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 100% (Continuous Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008)</span> <span class="badge-custom">BCom (Accounting) (1021, 1753)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Mathematical and computational skills useful in the Economics and Management environment.</li>\n                                                    <li>Skills to read mathematical text in Economics.</li>\n                                                    <li>Skills to write mathematical text in Economics.</li>\n                                                    <li>Skills to interpret correctly literature pertaining to Managerial Sciences that require knowledge of mathematics.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Mathematics of Finance: Simple & Compound interest, Depreciation, Sinking funds</li>\n                                                    <li>Introduction to Differential Calculus: limits, graphs, rules of differentiation</li>\n                                                    <li>Applications of Differentiation: maxima/minima, commercial optimization applications</li>\n                                                    <li>Introduction to Integral Calculus: definite/indefinite integral, consumers' and suppliers' surplus</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- man131 Details -->
+                                    <div id="details-man131" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Principles of Business Management 131/132</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>MAN131 / MAN132</strong> &bull; Core / Elective Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 15 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Management and Entrepreneurship</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 150 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> MAN131 - First Semester / MAN132 - Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 60% / FA 40% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008, 1751, 1761)</span> <span class="badge-custom">BCom (Accounting) (1021, 1753)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (Law) (7211)</span> <span class="badge-custom">BAdmin (1011)</span> <span class="badge-custom">LLB (7162, 7172)</span> <span class="badge-custom">BA (Sport, Recreation and Exercise Science) (8061)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Explain the broader context within which businesses operate in South Africa.</li>\n                                                    <li>Identify and illustrate the different types, processes and functional areas of businesses in South Africa.</li>\n                                                    <li>Explain and interpret the factors that influence business functions in both internal and external environments.</li>\n                                                    <li>Describe and elaborate on the broader context of business success and management principles.</li>\n                                                    <li>Apply business research methods, management decision-making and problem-solving techniques.</li>\n                                                    <li>Develop raised awareness of technology in business operations (4IR).</li>\n                                                    <li>Articulate module content orally and conduct research.</li>\n                                                    <li>Plan and work effectively with others in teams.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Overview of the business enterprise as a system</li>\n                                                    <li>Historical development of the field of Management</li>\n                                                    <li>External and internal business environment</li>\n                                                    <li>Entrepreneurship & establishing a business</li>\n                                                    <li>Managing functional areas: marketing, HRM, operations, finance</li>\n                                                    <li>Functions of management: planning, organising, leading, controlling</li>\n                                                    <li>Corporate Social Responsibility</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 4 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mer102 Details -->
+                                    <div id="details-mer102" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Mercantile Law 102</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>MER102</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 15 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Law</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Mercantile and Labour Law</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 150 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Accounting) (1021, 1753)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (1008, 1751)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>An understanding of the basic structure of our legal system.</li>\n                                                    <li>An understanding and application of the general principles of contract.</li>\n                                                    <li>An understanding and application of the consequences and remedies for breach of contract.</li>\n                                                    <li>Be familiar with the rights and duties of parties to common commercial contracts.</li>\n                                                    <li>Be aware of basic concepts of property and security law.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Introduction to the SA legal system</li>\n                                                    <li>General requirements for a valid contract</li>\n                                                    <li>Breach of contract and its remedies</li>\n                                                    <li>Specific commercial contracts</li>\n                                                    <li>Cession, property law, and security law</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 4 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 0 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- qsc131 Details -->
+                                    <div id="details-qsc131" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Quantitative Skills for Commerce 131/132</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>QSC131 / QSC132</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 15 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Natural Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Mathematics and Applied Mathematics</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 150 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> QSC131 - First Semester / QSC132 - Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 100% (Continuous Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008)</span> <span class="badge-custom">BCom Law (7211)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Solve problems with Commercial applications involving ratios, rates, and simple proportion.</li>\n                                                    <li>Discounts and markdowns, breakeven analysis.</li>\n                                                    <li>Time value of money.</li>\n                                                    <li>Straight-line and parabolic graphs with reference to revenue/cost/profit and supply/demand.</li>\n                                                    <li>Exponential and logarithmic curves.</li>\n                                                    <li>Draw and interpret statistical charts and calculate mean, median, and mode.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Ratio and proportions, rates, approximations</li>\n                                                    <li>Pricing a product, profits, breakeven analysis</li>\n                                                    <li>Simple interest, compound interest, annuities</li>\n                                                    <li>Straight line graphs and parabolas with link to finance and economics</li>\n                                                    <li>Exponential and logarithmic equations and graphs</li>\n                                                    <li>Descriptive statistics and measures of central tendency</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- aud241 Details -->
+                                    <div id="details-aud241" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Internal Auditing 241</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>AUD241</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> First Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Explain basic theory relating to the role of the internal auditing function.</li>\n                                                    <li>Explain types of internal audit.</li>\n                                                    <li>Explain the IIA standards and apply them to scenario-type questions.</li>\n                                                    <li>Explain the performance objectives of organisations.</li>\n                                                    <li>Explain concepts relating to risk assessment, and perform basic risk assessments.</li>\n                                                    <li>Explain control frameworks, with emphasis on control techniques.</li>\n                                                    <li>Explain how audit evidence can be collected and assessed.</li>\n                                                    <li>Explain the flow of the internal audit process.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>The emerging role of internal auditing</li>\n                                                    <li>Types of internal audit</li>\n                                                    <li>The IIA standards for the professional practice of internal auditing</li>\n                                                    <li>The performance objectives of organisations</li>\n                                                    <li>Risk assessment</li>\n                                                    <li>Control frameworks</li>\n                                                    <li>Audit evidence</li>\n                                                    <li>The internal audit process and documentation</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- aud242 Details -->
+                                    <div id="details-aud242" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Internal Auditing 242</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>AUD242</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Explain the flow of the internal audit process.</li>\n                                                    <li>Explain basic theory relating to control and performance evaluation.</li>\n                                                    <li>Explain basic theory relating to audit engagement tools, statistics and sampling.</li>\n                                                    <li>Explain the steps to be followed during the planning phase of the internal audit engagement.</li>\n                                                    <li>Explain the steps to be followed when drafting an audit report, including follow-ups.</li>\n                                                    <li>Apply the above theory to scenario-type questions.</li>\n                                                    <li>Explain sound corporate governance practices.</li>\n                                                    <li>Explain the interaction between accounting, internal audit, and external auditors.</li>\n                                                    <li>Explain duties regarding regulatory and legal compliance.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>The internal audit process and documentation</li>\n                                                    <li>Control and performance evaluation</li>\n                                                    <li>Audit engagement tools, statistics and sampling</li>\n                                                    <li>Engagement planning</li>\n                                                    <li>Audit reporting and follow-up</li>\n                                                    <li>Corporate governance</li>\n                                                    <li>The internal audit function and financial accounting/finance</li>\n                                                    <li>The legal and regulatory compliance environment</li>\n                                                    <li>Auditing in a computerised environment (General & Application controls, CAATS)</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 0 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- bet242 Details -->
+                                    <div id="details-bet242" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Business Ethics 242</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>BET242</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 60% / FA 40% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (1008, 1751)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Explain the purpose of this module and the ethics teaching arguments.</li>\n                                                    <li>Explain arguments for and against ethics in the business environment.</li>\n                                                    <li>Explain core elements of value systems (African, Judaism & Christianity, Islam).</li>\n                                                    <li>Explain ethical absolutism and relativism, and criticise extreme relativism.</li>\n                                                    <li>Explain and apply Virtue ethics, Rule morality (Kant), and Utilitarianism (Bentham, Mill).</li>\n                                                    <li>Explain a process for ethical decision-making.</li>\n                                                    <li>Explain Adam Smith's free market arguments and Marx's critique.</li>\n                                                    <li>Explain economic justice, corporate social responsibility, and corporate governance.</li>\n                                                    <li>Explain ethics management steps and problems.</li>\n                                                    <li>Explain three theories about the nature of the organisation.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Some value systems</li>\n                                                    <li>Some important ethical theories</li>\n                                                    <li>The free market system and the Marxist critique</li>\n                                                    <li>The moral obligations of the corporation & CSR</li>\n                                                    <li>Corporate governance</li>\n                                                    <li>Ethics management</li>\n                                                    <li>Theories about the nature of the organization</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 2 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 0 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- cpl211 Details -->
+                                    <div id="details-cpl211" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Company Law 211</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>CPL211</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Law</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Mercantile and Labour Law</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> First Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008, 1751)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (Law) (7211)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Fundamental rules, principles and concepts of South African Company Law.</li>\n                                                    <li>Procedure and requirements for the formation of companies/close corporations.</li>\n                                                    <li>Management and administration of companies, meetings, and auditor functions.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Company law and close corporation regulations</li>\n                                                    <li>Capita selecta from advanced company law</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 4 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- fia242 Details -->
+                                    <div id="details-fia242" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Financial Accounting 242</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>FIA242</strong> &bull; Core / Elective Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 20 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 200 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (1008, 1751)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Prepare and present company annual financial statements and disclosure notes.</li>\n                                                    <li>Calculate changes in accounting policies, estimates and prior period errors.</li>\n                                                    <li>Prepare basic business combinations.</li>\n                                                    <li>Undertake financial analysis and interpretation of financial statements.</li>\n                                                    <li>Assess business and financial risk.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>IFRS recognition, measurement and disclosure (EPS, cash flows, errors, policies)</li>\n                                                    <li>Financial structure and financial instruments</li>\n                                                    <li>Financial analysis and decision making</li>\n                                                    <li>Basic business combinations and borrowing costs</li>\n                                                    <li>Risk reporting and management statement reports</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0.5 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mac241 Details -->
+                                    <div id="details-mac241" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Management Accounting 241</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>MAC241</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> First Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BEd (4401)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Explain concepts and cost accumulation systems for product costing or services.</li>\n                                                    <li>Prepare cost statements (job order, process, joint/by-product, activity-based costing).</li>\n                                                    <li>Analyse and interpret Cost-Volume-Profit relationships.</li>\n                                                    <li>Prepare statements of comprehensive income under variable and absorption costing.</li>\n                                                    <li>Discuss budget development process, compile budgets, and apply decision-making techniques.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Functions of management accounting and its relation to financial accounting</li>\n                                                    <li>Cost concepts, classifications, and nature of costs</li>\n                                                    <li>Cost elements: materials, labour and overheads</li>\n                                                    <li>Cost accumulation: job, process, activity-based costing</li>\n                                                    <li>Direct and absorption costing</li>\n                                                    <li>Cost-volume-profit analysis</li>\n                                                    <li>Budget development and basic decision making</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mcr221 Details -->
+                                    <div id="details-mcr221" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Mercantile Law 221</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>MCR221</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Law</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Mercantile Law</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> First Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Accounting) (1021, 1753)</span> <span class="badge-custom">BCom (Financial Accounting) (1175)</span> <span class="badge-custom">BCom (1008, 1751)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Understand principles and rules regulating Law of Insolvency and Negotiable Instruments.</li>\n                                                    <li>Understand how these principles operate in practice.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>The Law of Insolvency (surrender, sequestration, insolvent estate, rehabilitation)</li>\n                                                    <li>The Law of Negotiable Instruments (cheque law, electronic payments & transactions)</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 0 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- tax242 Details -->
+                                    <div id="details-tax242" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Taxation 242</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>TAX242</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 6 &bull; 10 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 2</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 100 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> Second Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Accounting) (1021, 1753)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Define and identify the components of the taxable income framework.</li>\n                                                    <li>Identify information required to calculate individual taxable income and complete returns.</li>\n                                                    <li>Identify and use relevant information to complete a VAT return.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Gross Income: definition and inclusions</li>\n                                                    <li>General deductions: definitions, fringe benefits, CGT basic principles</li>\n                                                    <li>Basic principles of VAT</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 2 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>\n                                    <!-- mac341 Details -->
+                                    <div id="details-mac341" class="module-detail-content d-none">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div style="max-width: 75%;">
+                                                <h4 class="text-linear-4 mb-1">Management Accounting 341</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>MAC341</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 7 &bull; 15 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Accounting</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 3</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 150 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> First Semester</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 50% / FA 50% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Apply costing concepts in the design, implementation and operation of costing systems.</li>\n                                                    <li>Apply appropriate indicators to measure and evaluate management performance.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Joint and by-product costing</li>\n                                                    <li>Cost volume profit analysis</li>\n                                                    <li>Relevant cost and decision making</li>\n                                                    <li>Activity-based costing & Zero based budgeting</li>\n                                                    <li>Standard costing, divisional performance, and transfer pricing</li>
                                                 </ul>
 
                                                 <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
@@ -1575,6 +2790,7 @@
                 });
             });
         </script>
+
 
         <!-- projects -->
         <section class="section-projects-2 pt-5">
