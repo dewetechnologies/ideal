@@ -1401,6 +1401,181 @@
             </div>
         </section>
 
+        <!-- UWC Modules Section -->
+        <section id="modules" class="section-modules pt-5">
+            <style>
+                .module-tab {
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    background: transparent;
+                }
+                .module-tab:hover {
+                    background-color: rgba(168, 255, 83, 0.04);
+                    border-color: var(--tc-theme-primary-2) !important;
+                }
+                .module-tab.active {
+                    border-color: var(--tc-theme-primary-2) !important;
+                    background-color: rgba(168, 255, 83, 0.08) !important;
+                }
+                .badge-custom {
+                    display: inline-block;
+                    padding: 0.25rem 0.75rem;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    color: var(--tc-theme-primary-2);
+                    border: 1px solid var(--tc-theme-primary-2);
+                    border-radius: 0.25rem;
+                    background: rgba(168, 255, 83, 0.05);
+                }
+                .module-detail-content {
+                    animation: fadeIn 0.4s ease-in-out;
+                }
+                .module-icon-box {
+                    background-color: rgba(168, 255, 83, 0.1) !important;
+                    border: 1px solid var(--tc-theme-primary-2) !important;
+                }
+            </style>
+            <div class="container">
+                <div class="rounded-3 border border-1 position-relative overflow-hidden bg-3">
+                    <div class="box-linear-animation position-relative z-1 p-3 p-md-6 p-lg-8">
+                        <div class="d-flex align-items-center mb-3">
+                            <svg class="text-primary-2 me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path class="fill-primary-2" d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM12 5.18L18.99 9L12 12.82L5.01 9L12 5.18ZM12 17.3L5 13.48V16.3L12 20.12L19 16.3V13.48L12 17.3Z" fill="#A8FF53" />
+                            </svg>
+                            <span class="text-linear-4 fw-bold">Academic Modules</span>
+                        </div>
+                        <h3 class="mb-5">Modules Covered at the University of the Western Cape</h3>
+
+                        <div class="row g-4">
+                            <!-- Module Sidebar / Selection tabs -->
+                            <div class="col-lg-4">
+                                <div class="d-flex flex-column gap-2 module-list">
+                                    <!-- ALC131/132 Tab -->
+                                    <div class="module-tab border border-1 rounded-3 p-3 active" data-module="alc131">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="module-icon-box p-2 rounded text-center" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                                <span class="fw-bold text-primary-2" style="font-size: 14px;">ALC</span>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <h5 class="mb-0 text-dark">Academic Literacy</h5>
+                                                <span class="text-300 small">ALC131 / ALC132</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module Detail Display Panel -->
+                            <div class="col-lg-8 ps-lg-4">
+                                <div class="border border-1 rounded-3 p-4 bg-4 h-100">
+                                    <!-- ALC131/132 Details -->
+                                    <div id="details-alc131" class="module-detail-content">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 border-bottom pb-3 mb-4">
+                                            <div>
+                                                <h4 class="text-linear-4 mb-1">Academic Literacy for Commerce 131/132</h4>
+                                                <p class="text-300 mb-0">Module Code: <strong>ALC131 / ALC132</strong> &bull; Core Module</p>
+                                            </div>
+                                            <div class="px-3 py-1 rounded border border-1" style="background: rgba(168, 255, 83, 0.05); border-color: var(--tc-theme-primary-2) !important;">
+                                                <span class="text-primary-2 fw-semibold">NQF Level 5 &bull; 15 Credits</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Faculty:</span> Economic and Management Sciences</li>
+                                                    <li><span class="text-dark fw-medium">Department:</span> Academic Development</li>
+                                                    <li><span class="text-dark fw-medium">Year Level:</span> 1</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-300 small">
+                                                    <li><span class="text-dark fw-medium">Learning Time:</span> 150 Hours</li>
+                                                    <li><span class="text-dark fw-medium">Duration:</span> 1 Semester (First or Second)</li>
+                                                    <li><span class="text-dark fw-medium">Assessment:</span> CA 60% / FA 40% (Continuous & Final Assessment)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <h6 class="text-dark mb-3"><i class="ri-book-open-line text-primary-2 me-1"></i> Programmes Offered In</h6>
+                                            <div class="d-flex flex-wrap gap-2">
+                                                <span class="badge-custom">BCom (1008, 1751)</span>
+                                                <span class="badge-custom">BCom (Accounting) (1021, 753)</span>
+                                                <span class="badge-custom">BCom (Financial Accounting) (1175)</span>
+                                                <span class="badge-custom">BCom (Law) (7211)</span>
+                                                <span class="badge-custom">BAdmin (1011)</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-4">
+                                            <!-- Learning Outcomes -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-checkbox-circle-line text-primary-2 me-1"></i> Main Learning Outcomes</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Demonstrate the use of various listening and note-taking strategies.</li>
+                                                    <li>Demonstrate an understanding of group dynamics.</li>
+                                                    <li>Demonstrate an understanding of analytical and critical thinking.</li>
+                                                    <li>Apply critical and analytical reading skills in textbooks, journal articles, newspapers, and magazines.</li>
+                                                    <li>Write well-constructed written assignments and academic essays using references and quotations appropriately.</li>
+                                                    <li>Summarise main and supporting ideas in written texts.</li>
+                                                    <li>Write well-constructed reports and proposals.</li>
+                                                    <li>Effectively utilize IT-based productivity tools to organize and manage information.</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Main Content -->
+                                            <div class="col-md-6">
+                                                <h6 class="text-dark mb-3"><i class="ri-list-check-3 text-primary-2 me-1"></i> Main Content</h6>
+                                                <ul class="ps-3 text-300 small d-flex flex-column gap-2">
+                                                    <li>Listening and note-taking skills</li>
+                                                    <li>Group dynamics skills</li>
+                                                    <li>Critical thinking skills</li>
+                                                    <li>Reading and writing skills</li>
+                                                    <li>Referencing and quotation skills</li>
+                                                    <li>Digital information literacy skills</li>
+                                                </ul>
+
+                                                <h6 class="text-dark mt-4 mb-2"><i class="ri-time-line text-primary-2 me-1"></i> Weekly Commitment</h6>
+                                                <ul class="ps-3 text-300 small list-unstyled d-flex flex-column gap-1">
+                                                    <li><span class="fw-semibold text-primary-2">Lectures:</span> 3 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Tutorials:</span> 1 per week</li>
+                                                    <li><span class="fw-semibold text-primary-2">Practicals:</span> 0 per week</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const moduleTabs = document.querySelectorAll('.module-tab');
+                const detailPanels = document.querySelectorAll('.module-detail-content');
+
+                moduleTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        moduleTabs.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const target = this.getAttribute('data-module');
+                        detailPanels.forEach(panel => {
+                            if (panel.id === 'details-' + target) {
+                                panel.classList.remove('d-none');
+                            } else {
+                                panel.classList.add('d-none');
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
         <!-- projects -->
         <section class="section-projects-2 pt-5">
             <div class="container">
